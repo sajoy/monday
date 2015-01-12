@@ -11,7 +11,14 @@ class Parcel
   end
 
   define_method(:cost) do
-    cost = "%.2f" % (@weight.*(".5".to_f()))
+    rate_of_change = (".5".to_f())
+    cost = 0
+    (@weight.to_i()).times() do
+      cost = cost.+(rate_of_change)
+      rate_of_change = rate_of_change.-(".01".to_f())
+    end
+    cost = "%.2f" % cost
+
   end
 
 end

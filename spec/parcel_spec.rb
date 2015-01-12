@@ -12,8 +12,8 @@ describe(Parcel) do
 
   describe("#cost") do
     it("calculates the shipping cost based on the weight") do
-      test_parcel = Parcel.new(5, 8, 10, 5)
-      expect(test_parcel.cost()).to(eq(2.5))
+      test_parcel = Parcel.new(5, 8, 10, 1)
+      expect(test_parcel.cost()).to(eq("%.2f" % ".50".to_f()))
     end
   end
 
