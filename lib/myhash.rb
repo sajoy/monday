@@ -12,4 +12,12 @@ class MyHash
   define_method(:fetch) do |key|
     @wrapper_array.at(0).at(1)
   end
+
+  define_method(:has_key?) do |key|
+
+     @wrapper_array.each() do
+        @wrapper_array.at(0)==(key)
+      end
+  end
+
 end
