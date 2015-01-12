@@ -15,7 +15,11 @@ class Parcel
     cost = 0
     (@weight.to_i()).times() do
       cost = cost.+(rate_of_change)
-      rate_of_change = rate_of_change.-(".01".to_f())
+
+      if rate_of_change.>(0)
+        rate_of_change = rate_of_change.-(".001".to_f())
+      end
+
     end
     cost = "%.2f" % cost
 
